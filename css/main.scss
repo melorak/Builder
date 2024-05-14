@@ -13,12 +13,11 @@ html {
   display: none;
 }
 
-// Styling for Sidebar
 .sidenav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 17%;
+  width: 15%;
   height: 100vh;
   overflow: scroll;
   overflow-x: hidden;
@@ -28,14 +27,12 @@ html {
   transition: 0.5s;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.3);
-
   .logo {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;
   }
-
   .pages {
     height: 100px;
     overflow: scroll;
@@ -95,27 +92,27 @@ html {
   }
 }
 
-/* Theming */
+// Theming
 .gjs-one-bg {
   background-color: #fcf6f5ff;
 }
 
 .gjs-two-color {
-  color: #990011ff;
+  color: #006199ff;
 }
 
 .gjs-three-bg {
-  background-color: #990011ff;
+  background-color: #006199ff;
   color: #fcf6f5ff;
 }
 
 .gjs-four-color,
 .gjs-four-color-h:hover {
-  color: #990011ff;
+  color: #006199ff;
 }
 
 .gjs-pn-btn {
-  border: 1px solid #990011ff;
+  border: 1px solid #006199ff;
 }
 
 // Customize Bootstrap CSS
@@ -129,7 +126,7 @@ html {
 
 .btn {
   .fa {
-    color: #990011ff;
+    color: #006199ff;
   }
   &:hover {
     .fa {

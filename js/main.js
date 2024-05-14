@@ -1,53 +1,18 @@
 const editor = grapesjs.init({
-  container: '#editor',
+  container: "#editor",
   storageManager: false,
   blockManager: {
-    appendTo: '#blocks',
+    appendTo: "#blocks",
   },
-  storageManager: {
-    type: 'remote',
-    stepsBeforeSave: 3,
-    contentTypeJson: true,
-    storeComponents: true,
-    storeStyles: true,
-    storeHtml: true,
-    storeCss: true,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    id: 'mycustom-',
-    urlStore: `/pages/${location.pathname.split('/')[2]}/content`,
-    urlLoad: `/pages/${location.pathname.split('/')[2]}/content`,
-  },
+
   styleManager: {
-    appendTo: '#styles-container',
-    sectors: [
-      {
-        name: 'Dimension',
-        open: false,
-        buildProps: ['width', 'min-height', 'padding'],
-        properties: [
-          {
-            type: 'integer',
-            name: 'The width',
-            property: 'width',
-            units: ['px', '%'],
-            defaults: 'auto',
-            min: 0,
-          },
-        ],
-      },
-    ],
+    appendTo: "#styles-container",
   },
+
   layerManager: {
-    appendTo: '#layers-container',
+    appendTo: "#layers-container",
   },
-  traitManager: {
-    appendTo: '#trait-container',
-  },
-  selectorManager: {
-    appendTo: '#styles-container',
-  },
+
   panels: {
     defaults: [
       {
@@ -97,12 +62,13 @@ const editor = grapesjs.init({
       },
     ],
   },
+  
   plugins: ['gjs-blocks-basic'],
   pluginsOpts: {
     'gjs-blocks-basic': {},
   },
 });
-// Commands
+
 editor.Commands.add('set-device-desktop', {
   run: (editor) => editor.setDevice('Desktop'),
 });
