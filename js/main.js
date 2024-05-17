@@ -23,7 +23,7 @@ const editor = grapesjs.init({
             id: 'visibility',
             active: true, 
             className: 'btn-toggle-borders',
-            label: '<i class="bi bi-borders"></i>',
+            label: '<i class="bi bi-border-all"></i>',
             command: 'sw-visibility', 
           },
         ],
@@ -41,7 +41,7 @@ const editor = grapesjs.init({
           },
           {
             id: 'device-mobile',
-            label: '<i class="bi bi-mobile"></i>',
+            label: '<i class="bi bi-phone"></i>',
             command: 'set-device-mobile',
             togglable: false,
           },
