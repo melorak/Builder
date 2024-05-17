@@ -52,6 +52,7 @@ html {
 .main-content .navbar .container-fluid {
   padding: 0;
 }
+
 .main-content #editor {
   border: 2px solid rgba(0, 0, 0, 0.3);
 }

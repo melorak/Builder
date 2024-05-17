@@ -6,11 +6,11 @@ const editor = grapesjs.init({
   },
 
   styleManager: {
-    appendTo: "#styles-container",
+    appendTo: "#style-view",
   },
 
   layerManager: {
-    appendTo: "#layers-container",
+    appendTo: "#layer-container",
   },
 
   panels: {
@@ -21,27 +21,27 @@ const editor = grapesjs.init({
         buttons: [
           {
             id: 'visibility',
-            active: true, // active by default
+            active: true, 
             className: 'btn-toggle-borders',
-            label: '<i class="fa fa-clone"></i>',
-            command: 'sw-visibility', // Built-in command
+            label: '<i class="bi bi-borders"></i>',
+            command: 'sw-visibility', 
           },
         ],
-      },
+      }, 
       {
         id: 'panel-devices',
         el: '.panel__devices',
         buttons: [
           {
             id: 'device-desktop',
-            label: '<i class="fa fa-television"></i>',
+            label: '<i class="bi bi-laptop"></i>',
             command: 'set-device-desktop',
             active: true,
             togglable: false,
           },
           {
             id: 'device-mobile',
-            label: '<i class="fa fa-mobile"></i>',
+            label: '<i class="bi bi-mobile"></i>',
             command: 'set-device-mobile',
             togglable: false,
           },
