@@ -6,11 +6,35 @@ const editor = grapesjs.init({
   },
 
   styleManager: {
-    appendTo: "#style-view",
+    appendTo: "#styles-container",
+    sectors: [
+      {
+        name: "Dimension", open: false, 
+      buildProps: ["width", "min-height", "padding"],
+      properties: [
+          {
+            type: "integer",
+            name: "The Width",
+            property: "width",
+            units: ["px", "%", "rem"],
+            defaults: "auto",
+            min: 0,
+          },
+        ],
+      },
+    ],
   },
 
   layerManager: {
-    appendTo: "#layer-container",
+    appendTo: "#layers-container",
+  },
+
+  traitManager: {
+    appendTo: "#trait-container",
+  },
+
+  selectorManager: {
+    appendTo: '#styles-container',
   },
 
   panels: {
