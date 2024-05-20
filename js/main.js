@@ -1,42 +1,53 @@
 const editor = grapesjs.init({
-  container: "#editor",
+  container: '#editor',
   storageManager: false,
   blockManager: {
-    appendTo: "#blocks",
+    appendTo: '#blocks',
   },
-
+  storageManager: {
+    type: 'remote',
+    stepsBeforeSave: 3,
+    contentTypeJson: true,
+    storeComponents: true,
+    storeStyles: true,
+    storeHtml: true,
+    storeCss: true,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    id: 'mycustom-',
+    urlStore: `/pages/${location.pathname.split('/')[2]}/content`,
+    urlLoad: `/pages/${location.pathname.split('/')[2]}/content`,
+  },
   styleManager: {
-    appendTo: "#styles-container",
+    appendTo: '#styles-container',
     sectors: [
       {
-        name: "Dimension", open: false, 
-      buildProps: ["width", "min-height", "padding"],
-      properties: [
+        name: 'Dimension',
+        open: false,
+        buildProps: ['width', 'min-height', 'padding'],
+        properties: [
           {
-            type: "integer",
-            name: "The Width",
-            property: "width",
-            units: ["px", "%", "rem"],
-            defaults: "auto",
+            type: 'integer',
+            name: 'The width',
+            property: 'width',
+            units: ['px', '%'],
+            defaults: 'auto',
             min: 0,
           },
         ],
       },
     ],
   },
-
   layerManager: {
-    appendTo: "#layers-container",
+    appendTo: '#layers-container',
   },
-
   traitManager: {
-    appendTo: "#trait-container",
+    appendTo: '#trait-container',
   },
-
   selectorManager: {
     appendTo: '#styles-container',
   },
-
   panels: {
     defaults: [
       {
@@ -47,25 +58,25 @@ const editor = grapesjs.init({
             id: 'visibility',
             active: true, 
             className: 'btn-toggle-borders',
-            label: '<i class="bi bi-border-all"></i>',
-            command: 'sw-visibility', 
+            label: '<i class="fa fa-clone"></i>',
+            command: 'sw-visibility',
           },
         ],
-      }, 
+      },
       {
         id: 'panel-devices',
         el: '.panel__devices',
         buttons: [
           {
             id: 'device-desktop',
-            label: '<i class="bi bi-laptop"></i>',
+            label: '<i class="fa fa-television"></i>',
             command: 'set-device-desktop',
             active: true,
             togglable: false,
           },
           {
             id: 'device-mobile',
-            label: '<i class="bi bi-phone"></i>',
+            label: '<i class="fa fa-mobile"></i>',
             command: 'set-device-mobile',
             togglable: false,
           },
@@ -86,13 +97,11 @@ const editor = grapesjs.init({
       },
     ],
   },
-  
   plugins: ['gjs-blocks-basic'],
   pluginsOpts: {
     'gjs-blocks-basic': {},
   },
 });
-
 editor.Commands.add('set-device-desktop', {
   run: (editor) => editor.setDevice('Desktop'),
 });
